@@ -1,0 +1,165 @@
+/* Add CSS here */
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #edeff8;
+}
+.wrapper {
+    max-width: 600px;
+    height: 26rem;
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.wrapper .title h1 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.wrapper .title p {
+    font-size: .7rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+.wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-of-type {
+    left: 4rem;
+}
+.wrapper i:last-of-type {
+    right: 4rem;
+}
+.wrapper .carousel {
+    width: 100%;
+    height: 75%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    border-radius: 20px;
+}
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+.carousel :where(.card, .img) {
+    display: flex;
+    align-items: center;
+}
+.carousel .card {
+    scroll-snap-align: start;
+    min-height: 342px;
+    list-style: none;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+    padding-top: 3.5rem;
+}
+.carousel .card .testimonial {
+    background-color: #111124;
+    color: white;
+    font-size: .6rem;
+    width: 20rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 22px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.carousel .card .triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #111124;
+}
+
+.carousel .card .img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-top: .5rem;
+}
+
+.card .img img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 13px 16px rgba(0, 0, 0, 0.33);
+}
+
+.carousel .card h2 {
+    font-weight: 500;
+    font-size: .8rem;
+    margin: .5rem;
+    margin-bottom: 0;
+}
+
+.carousel .card span {
+    color: #6A6D78;
+    font-size: .65rem;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        max-width: 380px;
+    }
+    .wrapper i:first-of-type {
+        left: .5rem;
+    }
+    
+    .wrapper i:last-of-type {
+        right: .5rem;
+    }
+
+    .carousel .card .testimonial {
+        width: 14rem;
+    }
+} 
